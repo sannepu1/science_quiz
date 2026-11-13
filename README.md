@@ -1,0 +1,5 @@
+# In-Class 15 - Science Signal (C2)
+
+Flutter true/false science quiz using the Open Trivia DB API.
+
+I tested loading by watching the spinner show up while the questions load. For failure I turned off wifi and hit play again, so it showed the error message with a retry button, and then I turned wifi back on and retry worked. The code checks that the HTTP status is 200, that response_code is 0 and that it got exactly 5 results before it starts the round. To stop repeated scoring the app saves the answer the first time you tap. If there’s already a selected answer it just ignores more taps, so you can only get one point per question. The score submission is simulated. It waits 2 seconds, shows the payload and says no request was sent to a server, so nothing actually got saved. The question GET request just reads data from Open Trivia DB. A real score submission would be a POST that sends the payload to a backend, and you’d only show success after the server confirms it saved.
